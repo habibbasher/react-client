@@ -3,6 +3,8 @@ import React, {Component} from 'react';
 import HOComp from '../../hocomp/HOComp';
 import Burger from '../../components/burger/Burger';
 import BuildControls from '../../components/burger/build-controls/BuildControls';
+import Modal from '../../components/ui/modal/Modal';
+import OrderSummary from '../../components/burger/order-summary/OrderSummary';
 
 const INGREDIENT_PRICES = {
   salad: 0.5,
@@ -98,6 +100,14 @@ class BurgerBuilder extends Component {
 
     return (
       <HOComp>
+        <Modal show={this.state.purchasing} modalClosed={this.purchaseCancelHandler}>
+          <OrderSummary
+            ingredients={this.state.ingredients}
+            price={this.state.totalPrice}
+            purchaseCancelled={this.purchaseCancelHandler}
+            purchaseContinued={this.purchaseContinueHandler}
+          />
+        </Modal>
         <Burger ingredients={this.state.ingredients} />
         <BuildControls
           ingredientAdded={this.addIngredientHandler}
