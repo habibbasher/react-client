@@ -2,9 +2,9 @@ import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 
 import classes from './Layout.css';
-import HOC from '../../hocomp/HOComp';
-import Toolbar from '../navigation/toolbar/Toolbar';
-import SideDrawer from '../navigation/side-drawer/SideDrawer';
+import HOC from '../HOComp';
+import Toolbar from '../../components/navigation/toolbar/Toolbar';
+import SideDrawer from '../../components/navigation/side-drawer/SideDrawer';
 
 class Layout extends Component {
 
