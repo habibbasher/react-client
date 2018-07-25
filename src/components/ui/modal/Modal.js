@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import classes from './Modal.css';
 import HOC from '../../../hocomp/HOComp';
@@ -16,5 +17,11 @@ const Modal = (props) => (
     </div>
   </HOC>
 );
+
+Modal.propTypes = {
+  show: PropTypes.bool.isRequired,
+  children: PropTypes.element.isRequired,
+  modalClosed: PropTypes.number.isRequired
+};
 
 export default Modal;

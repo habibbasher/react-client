@@ -1,3 +1,3 @@
-const hocomp = (props) => props.children;
+const Hocomp = (props) => props.children;
 
-export default hocomp;
+export default Hocomp;

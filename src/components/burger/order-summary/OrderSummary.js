@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import HOC from '../../../hocomp/HOComp';
 import Button from '../../ui/button/Button';
@@ -29,6 +30,13 @@ const OrderSummary = (props) => {
       <Button btnType="Success" clicked={props.purchaseContinued}>CONTINUE</Button>
     </HOC>
   );
+};
+
+OrderSummary.propTypes = {
+  ingredients: PropTypes.object.isRequired,
+  price: PropTypes.number.isRequired,
+  purchaseCancelled: PropTypes.func.isRequired,
+  purchaseContinued: PropTypes.func.isRequired
 };
 
 export default OrderSummary;
