@@ -14,7 +14,7 @@ class Modal extends Component {
 */
 
   shouldComponentUpdate(nextProps, nextState) {
-    return nextProps.show !== this.props.show;
+    return nextProps.show !== this.props.show || nextProps.children !== this.props.children;
   }
 
   componentWillUpdate() {
@@ -37,10 +37,10 @@ class Modal extends Component {
   }
 }
 
-Modal.propTypes = {
-  show: PropTypes.bool.isRequired,
-  children: PropTypes.element.isRequired,
-  modalClosed: PropTypes.func.isRequired
-};
+// Modal.propTypes = {
+//   show: PropTypes.bool.isRequired,
+//   children: PropTypes.any.isRequired,
+//   modalClosed: PropTypes.func.isRequired
+// };
 
 export default Modal;
